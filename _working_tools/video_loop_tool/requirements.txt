@@ -1,0 +1,4 @@
+# Video Loop Tool dependencies
+# This project uses only standard library (tkinter, subprocess, etc.)
+# FFmpeg/FFprobe executables are bundled in ffmpeg_executables/
+# No pip dependencies required

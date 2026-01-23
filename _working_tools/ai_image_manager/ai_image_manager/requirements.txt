@@ -1,0 +1,5 @@
+Flask==2.2.5
+Werkzeug==2.2.5
+# Future dependencies for automated tagging can be added here
+# spaCy==3.4.4
+# python-dotenv==1.0.0

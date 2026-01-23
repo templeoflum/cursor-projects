@@ -1,0 +1,67 @@
+---
+version: 1.0
+name: "Hero Archetype"
+typeID: "archetype-hero-001"
+universeID: "Auralis"
+inheritsFrom: "archetype-adventurer"
+relationships:
+  - type: "inspired by"
+    target: "archetype-mentor"
+    description: "Guided by the mentor archetype in the Hero’s Journey."
+author: "Your Name"
+keywords: ["hero", "archetype", "journey"]
+abstract: "The Hero Archetype represents a figure called to adventure, growth, and transformation."
+
+dynamic_attributes:
+  polarity:
+    axis: "Internal-External"
+    default_state: "Internal"
+    fluctuation_range: "-3 to +3"
+  vibration_level:
+    default_intensity: "Medium"
+  rhythm:
+    cycle: "Seasonal"
+    phase:
+      current: "growth"
+      degree: 0.2
+      phases: ["growth", "peak", "decline", "reset"]
+  energy:
+    masculine: 0.6
+    feminine: 0.4
+  seed: 0.1
+
+## Core Characteristics
+traits:
+  - name: "Courage"
+    description: "The ability to confront fear and adversity."
+    attributes:
+      - name: "Resilience"
+        type: "integer"
+        value: 15
+        description: "Capacity to endure challenges."
+  - name: "Determination"
+    description: "A steadfast commitment to achieving goals."
+
+## Patterns
+patterns:
+  - name: "Call to Adventure"
+    description: "The hero is called to leave their ordinary world and embark on a journey."
+  - name: "Transformation"
+    description: "The hero undergoes a profound change, often involving personal growth."
+
+## Related Archetypes
+related_archetypes:
+  - name: "Mentor"
+    relationship: "guide"
+    influence: "Provides wisdom and support."
+    target: "archetype-mentor"
+  - name: "Shadow"
+    relationship: "adversary"
+    influence: "Represents the hero’s inner conflict."
+    target: "archetype-shadow"
+
+## Notes and Commentary
+notes:
+  - description: "This archetype forms the foundation of many narrative structures, especially the Hero’s Journey."
+    author: "Narrative Designer"
+    timestamp: "2025-01-20T10:00:00Z"

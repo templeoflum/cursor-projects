@@ -1,0 +1,111 @@
+---
+version: 1.0
+name: "Surreal Visual Style 002"
+styleID: "surreal-002"
+inheritsFrom: "hermetic-001"
+dynamic_attributes:
+  polarity:
+    axis: "Dreamlike-Concrete"
+    current_state: "Dreamlike"
+  vibration_level:
+    default_intensity: "High"
+  rhythm:
+    cycle: "Event-Based"
+    phase:
+      degree: 0.5       # Style seed: starting point in the phase cycle
+      phases: ["growth", "peak", "decline", "reset"]  # Define the phase cycle
+  energy:
+    masculine: 0.3
+    feminine: 0.7
+seed: 0.2  # Normalized seed value (0 to 1) for the style
+
+## Core Style Attributes
+intentions:
+  purpose: "Create surreal, dreamlike designs to evoke wonder and challenge perceptions through unexpected juxtapositions and symbolic depth."
+  values:
+    - "Imagination"
+    - "Juxtaposition"
+    - "Dream logic"
+    - "Transformation"
+  scope: "Applicable to branding, editorial design, interactive installations, and digital experiences."
+  adaptability: "Capable of evolving through new symbolic motifs while retaining core surrealist principles."
+
+style_lexicon:
+  - concept: "Juxtaposition"
+    description: "Combining unrelated elements to create tension or intrigue."
+    attributes:
+      - name: "Contrast Level"
+        type: "float"
+        description: "Degree of contrast between elements."
+  - concept: "Dream Logic"
+    description: "Creating illogical, fluid transitions inspired by the subconscious."
+  - concept: "Floating Objects"
+    description: "Depicting ordinary objects suspended in space to defy expectations."
+  - concept: "Symbolic Depth"
+    description: "Using layered textures and motifs to add subconscious meaning."
+patterns:
+  - name: "Fractured Spaces"
+    description: "Scenes that feel infinite, fragmented, or disjointed."
+    examples:
+      - "A staircase that leads to nowhere, suspended in a void."
+  - name: "Dynamic Reflections"
+    description: "Using mirrors or reflections to evoke alternate realities."
+  - name: "Symbolic Layers"
+    description: "Layering textures and elements to hint at deeper subconscious meanings."
+integrators:
+  - integrator: "Fluidity"
+    role: "Ensures designs feel morphing and alive, maintaining a dreamlike state."
+
+## Guidelines
+text_style:
+  - "Use poetic or evocative language to complement surreal visuals."
+  - "Favor ambiguity over clarity to provoke thought."
+visual_style:
+  - "Incorporate vibrant, high-contrast color palettes."
+  - "Combine organic, fluid shapes with sharp geometric contrasts."
+  - "Use reflections, mirrors, or distortions to evoke alternate realities."
+interactive_style:
+  - "Create dynamic environments that shift based on user input."
+  - "Present symbolic choices instead of direct labels for interactions."
+
+## Palette and Resources
+color_palette:
+  - name: "Ethereal Blue"
+    hex: "#5DADE2"
+    role: "Primary"
+  - name: "Glowing Yellow"
+    hex: "#F7DC6F"
+    role: "Accent"
+  - name: "Deep Black"
+    hex: "#000000"
+    role: "Background"
+typography:
+  - font_name: "DaliScript"
+    style: "Organic"
+    usage: "Headlines"
+  - font_name: "Futura"
+    style: "Bold"
+    usage: "Subheadings"
+
+## Implementation and Examples
+examples:
+  - context: "Editorial Design"
+    description: "Magazine covers featuring surreal collages of floating objects and vibrant contrasts."
+    visual_preview: "https://example.com/surreal-cover.png"
+  - context: "Interactive Installations"
+    description: "Environments that morph dynamically based on user behavior, using symbolic elements."
+    visual_preview: "https://example.com/surreal-interactive.png"
+implementation_tips:
+  - "Experiment with layering textures and colors to evoke depth."
+  - "Use ambiguous visuals to provoke curiosity and introspection."
+  - "Incorporate symbolic elements with personal or cultural meaning."
+
+## Related Styles and Files
+related_items:
+  - type: "extends"
+    target: "style-dreamlike-02"
+    description: "Shares principles with other dreamlike visual styles."
+binary_attachments:
+  - name: "Surreal Moodboard"
+    type: "image/png"
+    url: "https://example.com/surreal-moodboard.png"

@@ -1,0 +1,68 @@
+---
+lawsID: "hermetic-001"
+name: "Universal Hermetic Laws with Phases and Seeds"
+description: "A core set of universal principles and dynamic rules guiding the system."
+
+dynamic_attributes:
+  polarity:
+    axis: "Stability-Change"
+    default_state: "Balanced"
+    fluctuation_range: "-1 to +1"
+    offset_range: "-0.1 to +0.1"
+  vibration_level:
+    default_intensity: "Medium"
+    fluctuation_range: "-0.5 to +0.5"
+    offset_range: "-0.1 to +0.1"
+  rhythm:
+    cycle: "Daily"
+    phase:
+      phases: ["growth", "peak", "decline", "reset"]
+      current: "growth"
+      degree: 0.25
+      seed: 0.3
+seed: 0.5
+
+universal_principles:
+  - name: "Mentalism"
+    description: "The principle that all reality begins with a mental cause or intention."
+    effect: "Prompts dynamically influence attributes, rhythms, and energy flows across the system."
+    implementation:
+      prompts:
+        intention: # Placeholder for high-level intention (e.g., "Align the system to cosmic rhythms.")
+        query: # Placeholder for a query to adapt attributes dynamically (e.g., "How can vibration enhance stability?")
+  - name: "Polarity"
+    description: "All attributes operate on a polarity spectrum, balancing opposites dynamically."
+    effect: "Guides the modulation of polarity attributes system-wide."
+  - name: "Vibration"
+    description: "All entities vibrate at unique intensities influenced by the .law file."
+    effect: "Dynamic energy modulates activity intensity and task execution frequency."
+  - name: "Rhythm"
+    description: "Everything moves in cycles, with phases guiding dynamic changes."
+    effect: "Attributes align with rhythmic cycles for natural modulation."
+  - name: "Correspondence"
+    description: "Phases and cycles align across file types, ensuring coherence."
+    effect: "Ripple effects propagate dynamically between linked files."
+  - name: "Cause and Effect"
+    description: "All changes have a cause-effect chain across the system."
+    effect: "Modifications in one file propagate to related files."
+  - name: "Gender"
+    description: "Attributes embody creative (masculine) and receptive (feminine) energies."
+    effect: "Balances dynamic interactions through creative and receptive modulation."
+
+file_variation_rules:
+  - fileType: ".style"
+    variations:
+      - principle: "Polarity"
+        allowable_range: "-0.5 to +0.5"
+        example_effects: "Adjusts design aesthetics from stable to experimental."
+      - principle: "Vibration"
+        allowable_range: "-0.2 to +0.2"
+        example_effects: "Modulates interaction intensity for dynamic environments."
+  - fileType: ".sheet"
+    variations:
+      - principle: "Rhythm"
+        allowable_range: "Daily to Weekly"
+        example_effects: "Aligns character attributes with rhythmic cycles."
+      - principle: "Energy"
+        allowable_range: "-0.3 to +0.3"
+        example_effects: "Balances creative and receptive energies for character traits."

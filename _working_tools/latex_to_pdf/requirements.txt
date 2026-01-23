@@ -1,0 +1,2 @@
+# LaTeX to PDF Converter dependencies
+latex

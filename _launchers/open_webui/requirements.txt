@@ -1,0 +1,4 @@
+# Open WebUI Launcher dependencies
+# This project launches Open WebUI - install it with:
+# pip install open-webui
+open-webui

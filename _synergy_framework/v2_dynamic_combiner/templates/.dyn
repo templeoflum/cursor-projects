@@ -1,0 +1,48 @@
+---
+version: # version number of the .dyn file (e.g., "1.0")
+name: # text - Name of the dynamic attribute set (e.g., "Hermetic Dynamic Attributes")
+dynID: # unique identifier for the dynamic attribute set
+description: # text - Brief description of the purpose and scope of this file
+
+dynamic_attributes:
+  source: "dynamics/default.dyn"
+  tuning_function: "align_with_default_cycles"
+
+principles:
+  mentalism:
+    prompts: # Allows for mentalism-driven prompt injection
+      intention: # text - High-level intention guiding this dynamic attribute set
+      query: # text - Query to adapt attributes dynamically
+  correspondence:
+    linked_phases: # list of mappings - Correspondences between phases in the system
+      - source: # text - Source phase (e.g., "growth")
+        target: # text - Target phase or system (e.g., "peak in vibration_level")
+        effect: # text - Correspondence effect (e.g., "Align vibration to peak intensity")
+  vibration:
+    base_intensity: # float - Default vibration level for this system
+    fluctuation_range: # text - Fluctuation range for vibration (e.g., "-0.2 to +0.2")
+    offset_range: # text - Offset range for vibration modulation (e.g., "-0.05 to +0.05")
+  polarity:
+    axis: # text - Polarity spectrum (e.g., "Internal-External")
+    fluctuation_range: # text - Fluctuation range (e.g., "-0.33 to +0.33")
+    offset_range: # text - Offset range for intentional shifts (e.g., "-0.1 to +0.1")
+    default_state: # text - Default position on the polarity axis
+  rhythm:
+    cycle: # text - Temporal rhythm (e.g., "Seasonal", "Contextual")
+    phase:
+      phases: # list of text - All possible phases (e.g., ["growth", "peak", "decline", "reset"])
+      degree: # float - Current normalized phase position (0 to 1)
+      seed: # float - Seed value for phase alignment (0 to 1)
+  cause_and_effect:
+    dependencies: # list of mappings - Cause-effect chains in the system
+      - trigger: # text - Event or change that triggers an effect (e.g., "growth phase starts")
+        effect: # text - Effect resulting from the trigger (e.g., "increase polarity intensity")
+  gender:
+    creative: # float - Creative (masculine) energy (e.g., "0.6")
+    receptive: # float - Receptive (feminine) energy (e.g., "0.4")
+    offset_range: # text - Offset range for energy balance (e.g., "-0.1 to +0.1")
+    balanced_state: # float - Dynamically calculated balance state
+  cycles:
+    global_phases: # list of text - Universal phases this set aligns with (e.g., ["expansion", "stability", "contraction", "reset"])
+    degree: # float - Current position in the global cycle (0 to 1)
+    seed: # float - Seed for cycle alignment (0 to 1)

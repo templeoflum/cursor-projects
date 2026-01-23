@@ -1,0 +1,89 @@
+---
+version: # version number of the style document (e.g., 1.0)
+name: # text - Name of the style (e.g., "Minimalist Narrative Style")
+styleID: # unique identifier for the style
+universeID: # text (e.g., "Narrative", "Design", "Universal")
+inheritsFrom: # text - OPTIONAL: Parent styles or related archetypes influencing this style
+relationships: # list of mappings - OPTIONAL: Connections to other styles, frameworks, or universes
+  - type: # text (e.g., "inspired by", "extends")
+    target: # text - Target file or document ID
+    description: # text - Description of the relationship
+author: # text - OPTIONAL: Creator of the style
+keywords: # list of text - Tags for categorizing or searching
+abstract: # text - OPTIONAL: A concise description of the style
+dynamic_attributes: # Hermetic-inspired dynamic elements
+  polarity:
+    axis: # text - Polarity spectrum (e.g., "Bold-Subtle")
+    current_state: # text - Current position on the axis
+  vibration_level: # text - Intensity or energy level (e.g., "Low", "Medium", "High")
+  rhythm:
+    cycle: # text - Temporal rhythm (e.g., "Seasonal", "Event-Based")
+    last_applied: # timestamp - Last applied or updated
+  gender_energy:
+    masculine: # float - Value between 0 and 1
+    feminine: # float - Value between 0 and 1
+
+---
+
+## Core Style Attributes
+intentions:
+  purpose: # text - Purpose of the style (e.g., "To create minimal, elegant narratives.")
+  values: # list of text - Philosophical or aesthetic principles underpinning this style
+  scope: # text - Application boundaries (e.g., "Applies to digital product designs.")
+  adaptability: # text - How this style evolves or adapts to different contexts or trends
+
+style_lexicon:
+  - concept: # text - Core concept defining this style (e.g., "Negative Space")
+    description: # text - Explanation of the concept
+    attributes: # list of mappings - OPTIONAL: Specific details about the concept
+      - name: # text
+        type: # text (e.g., "string", "integer", "boolean")
+        description: # text
+patterns:
+  - name: # text - Name of the pattern (e.g., "Flat Design")
+    description: # text - Explanation of how the pattern functions in this style
+    examples: # OPTIONAL: Examples where the pattern is applied
+integrators:
+  - integrator: # text - A principle unifying the style (e.g., "Minimalism")
+    role: # text - Its function within the style
+
+---
+
+## Guidelines
+text_style: # list of text - Rules for text and narrative applications
+visual_style: # list of text - Rules for visual design
+interactive_style: # list of text - Rules for user experiences and interaction
+
+---
+
+## Palette and Resources
+color_palette:
+  - name: # text - Color name or role (e.g., "Primary Blue")
+    hex: # text - Hexadecimal color code (e.g., "#3498db")
+    role: # text - Role in the style (e.g., "Primary", "Accent", "Background")
+typography:
+  - font_name: # text - Name of the font
+    style: # text - Weight or style (e.g., "Bold", "Italic")
+    usage: # text - Where and how this font is applied (e.g., "Headlines")
+
+---
+
+## Implementation and Examples
+examples:
+  - context: # text - Application context (e.g., "Mobile App Design")
+    description: # text - How this style applies
+    visual_preview: # text - OPTIONAL: URL or file path to a visual example
+implementation_tips: # list of text - Strategies for applying and maintaining the style
+
+---
+
+## Related Styles and Files
+related_items:
+  - type: # text - Relationship type (e.g., "inspired by", "extends")
+    target: # text - Related file or style ID
+    description: # text - Explanation of the relationship
+
+binary_attachments: # OPTIONAL: Visual assets, style guides, or examples
+  - name: # text - Name of the attachment
+    type: # text (e.g., "image/png", "text/markdown")
+    url: # text - URL or file path

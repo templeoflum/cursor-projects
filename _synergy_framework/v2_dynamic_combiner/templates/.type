@@ -1,0 +1,57 @@
+---
+version: # version number of the archetype file (e.g., "1.0")
+name: # text - Name of the archetype (e.g., "Hero Archetype")
+typeID: # unique identifier for the archetype
+universeID: # text - The universe or domain this archetype belongs to (e.g., "Auralis", "Universal")
+inheritsFrom: # text - OPTIONAL: Parent archetypes or frameworks influencing this archetype
+relationships: # list of mappings - OPTIONAL: Connections to other archetypes or systems
+  - type: # text (e.g., "inspired by", "contradicts", "extends")
+    target: # text - Target archetype ID or file
+    description: # text - Explanation of the relationship
+author: # text - OPTIONAL: Creator of the archetype
+keywords: # list of text - Tags for categorization and search
+abstract: # text - OPTIONAL: A concise description of the archetype's purpose and scope
+
+dynamic_attributes:
+  source: "dynamics/default.dyn"
+  tuning_function: "align_with_default_cycles"
+
+---
+
+## Core Characteristics
+traits:
+  - name: # text - Name of the trait (e.g., "Courage")
+    description: # text - Explanation of the trait
+    attributes: # list of mappings - OPTIONAL: Additional properties of the trait
+      - name: # text - Attribute name
+        type: # text - Data type (e.g., "string", "integer", "boolean")
+        value: # text or number - Current value
+        description: # text - OPTIONAL: Description of the attribute
+  - name: # text
+    description: # text
+    attributes: # list of mappings
+
+---
+
+## Patterns
+patterns:
+  - name: # text - Name of the pattern (e.g., "Call to Adventure")
+    description: # text - Explanation of the pattern
+    examples: # list of text - OPTIONAL: Examples or contexts for the pattern
+
+---
+
+## Related Archetypes
+related_archetypes:
+  - name: # text - Name of the related archetype
+    relationship: # text - Type of relationship (e.g., "mentor", "shadow")
+    influence: # text - How the archetype influences this one
+    target: # text - Target archetype ID or file
+
+---
+
+## Notes and Commentary
+notes:
+  - description: # text - Commentary or insights about the archetype
+    author: # text - OPTIONAL: Name of the author of the note
+    timestamp: # timestamp - OPTIONAL: Date or time the note was added

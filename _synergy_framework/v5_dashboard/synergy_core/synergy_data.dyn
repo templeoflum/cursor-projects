@@ -1,0 +1,14 @@
+version: 1.0
+name: "Universal Dynamic Attributes"
+dynID: "synex-universal-001"
+baseline_seed: 0.5
+use_unified_seed: true
+
+dynamic_attributes:
+  synergy_measure: "E_total"
+  cycic_threshold: 0.03
+  default_fluctuation: "-0.2 to 0.2"
+
+description: |
+  A single .dyn file for all synergy references. Each step's init.* 
+  can read these for baseline expansions or partial overrides. 

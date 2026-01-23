@@ -1,0 +1,71 @@
+---
+version: # version number of the document (e.g., 1.0)
+name: # text - Title of the document (e.g., "Default Design Language")
+stepNumber: # integer - The step in the design development process (e.g., 1)
+universeID: # text (e.g., "Auralis", "Universal")
+inheritsFrom: # text - OPTIONAL: The universe or archetype influencing this document
+relationships: # list of mappings - OPTIONAL: Connections to other documents or universes
+  - type: # text (e.g., "supports", "contradicts")
+    target: # text - ID of the related document/universe
+    description: # text - Explanation of the relationship
+author: # text - OPTIONAL: Author of the document
+keywords: # list of text - OPTIONAL: Keywords related to the document
+abstract: # text - OPTIONAL: A concise description of the document's purpose
+data_types: # list of text - OPTIONAL: Define custom data types used in this document (e.g., "ColorPalette", "Typography")
+
+dynamic_attributes:
+  source: "dynamics/default.dyn"
+  tuning:
+    file: "tuning/default.tune"
+    mode: "Resonant"
+    description: "Optimized for a balanced design language."
+
+---
+
+## Intentions
+purpose: # text - A clear and concise statement of the design language's overall objective
+values: # list of text - Core ethical, aesthetic, or creative values guiding the design language
+scope: # text - Boundaries for the design language's application
+future_orientation: # text - How the design language adapts to evolving needs and goals
+
+## Core Components
+lexicon:
+  - concept: # text - Key term (e.g., "Harmony")
+    description: # text - Explanation of the term
+    attributes: # list of mappings - OPTIONAL: Attributes defining the term
+      - name: # text - Attribute name
+        type: # text (e.g., "string", "integer")
+        description: # text - OPTIONAL
+patterns:
+  - pattern: # text - Name of the pattern (e.g., "Golden Ratio")
+    description: # text - Explanation of the pattern's role in the design
+master_key:
+  integrators:
+    - integrator: # text - A unifying concept or principle
+      role: # text - The integrator's role in the design framework
+
+## Guidelines
+text_narratives: # list of text - Guidelines for handling text content
+visual_concepts: # list of text - Guidelines for crafting visuals
+interactive_design: # list of text - Best practices for user interaction
+
+## Content
+content: |
+  # Markdown content
+  This section is where the design language's principles and details are laid out.
+
+## Implementation Strategies
+implementation_strategies:
+  - # text - Strategies for maintaining and evolving the design language
+
+## Related Items
+related_items:
+  - type: # text - Relationship type (e.g., "inspired by", "aligned with")
+    target: # text - Related document or item ID
+    description: # text - Explanation of the relationship
+
+## Binary Attachments
+binary_attachments:
+  - name: # text - Name of the attachment
+    type: # text (e.g., "image/png", "audio/mpeg")
+    url: # text - URL or file path to the attachment

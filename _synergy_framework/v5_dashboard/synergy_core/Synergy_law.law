@@ -1,0 +1,13 @@
+version: 1.0
+name: "Init for Step 1: Potential"
+universeID: "Synex"
+inheritsFrom: "../synergy_core/synergy_law.law"
+
+dynamic_attributes:
+  # optionally reference synergy_data:
+  source: "../synergy_core/synergy_data.dyn"
+  local_offset_range: "-0.05 to 0.05"
+
+description: |
+  The main init file for Potential. Reads universal dynamic attributes 
+  and can add a local offset if necessary. 

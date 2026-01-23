@@ -1,0 +1,77 @@
+---
+lawsID: "dflt-law-001"
+name: "Default Universal Law (6-Step)"
+version: 1.0
+author: "System Designer"
+universeID: "Synex"
+inheritsFrom: "universal-hermetic-000"
+tags: ["law", "default", "6-step", "0.5-baseline"]
+abstract: "Provides default universal constraints and synergy guidelines for the six-step architecture, ensuring cycic equilibrium near 0.5."
+
+dynamic_attributes:
+  synergy_measure:
+    name: "E_total"
+    default_baseline: 0.5
+    description: "Tracks total synergy across all steps; tries to remain near 0.5 or any seeded midpoint."
+  
+  cycic_threshold:
+    name: "epsilon_cyclic"
+    default_value: 0.03
+    description: "If |E_total - 0.5| < 0.03, synergy is considered stable. Otherwise, partial resets or expansions apply."
+
+  # Optional: Additional universal attributes
+  polarity:
+    axis: "Harmonic-Disharmonic"
+    default_state: "Harmonic"
+    fluctuation_range: "-0.5 to 0.5"
+  vibration:
+    default_intensity: "Medium"
+    cycic_sensitivity: 0.1
+    description: "How quickly the system reacts to synergy drift."
+
+seed: 0.5  # Typically references default synergy
+use_unified_seed: true
+
+## Universal Principles
+principles:
+  - name: "Dynamic Reciprocity"
+    description: "All expansions reflect back to seeds, forming cycic synergy."
+    effect: "Mandates a feedback loop at each step: Potential to Recursion, then re-check seeds."
+  - name: "Fractal Correspondence"
+    description: "Micro changes at one step mirror macro changes across the six-step flow."
+    effect: "A small offset in Step 1 can ripple to Step 6, then feed back and unify synergy measure."
+
+## Update and Enforcement Policies
+update_policies:
+  - frequency: "Event-Driven"  # The law updates whenever synergy drifts outside cycic threshold
+  - approval_process: "Consensus or Automated"  # E.g., partial expansions if drift is mild
+
+## Related Items
+related_items:
+  - type: "aligned with"
+    target: "dflt-dyn-001"
+    description: "References the default dynamic attributes for the 6-step approach."
+
+## Universal_Principles (Optional Extended)
+universal_principles:
+  - name: "Seed-Centric"
+    description: "Seeds (baseline ~ 0.5) unify expansions across steps."
+    effect: "Ensures no step or domain overshadow synergy’s balanced midpoint."
+  - name: "Cycic Re-centering"
+    description: "If synergy measure drifts, partial resets or advanced expansions re-align."
+    effect: "Maintains E_total ≈ 0.5 ± epsilon_cyclic."
+
+file_variation_rules:
+  - fileType: ".tune"
+    variations:
+      - principle: "Cycic Re-centering"
+        allowable_range: "-0.5 to +0.5 from baseline"
+        example_effects: "If synergy overshoots, logistic or exponential re-centering triggers."
+
+description: |
+  The “Default Universal Law (6-Step)” file enforces cycic harmony for the Potential→Symmetry→Flow→Connectivity→Emergence→Recursion loop.
+  It references a synergy measure near 0.5, employing partial expansions or resets if drift from the cycic threshold is detected. This law
+  ensures each step remains in fractal correspondence with others and seeds unify expansions.
+
+attachments: []
+...

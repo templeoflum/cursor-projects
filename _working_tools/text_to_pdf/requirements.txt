@@ -1,0 +1,3 @@
+# Text to PDF Converter dependencies
+fpdf
+chardet

@@ -1,0 +1,20 @@
+{
+    "potential": 0.0,
+    "symmetry": 0.0,
+    "flow": 0.0,
+    "connectivity": 0.0,
+    "emergence": 0.0,
+    "recursion": 0.0,
+    
+    // Possibly store seed references or expansions info:
+    "current_seed": "default.seed",
+    "expansions": {
+      "01_Potential": true,
+      "02_Symmetry": true,
+      "03_Flow": true,
+      "04_Connectivity": false,
+      "05_Emergence": false,
+      "06_Recursion": false
+    }
+  }
+  

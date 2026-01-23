@@ -1,0 +1,94 @@
+---
+version: 1.0
+name: "Summarize Text to Key Points"
+transformID: "transform-summarize-text-001"
+universeID: "Text Processing"
+inheritsFrom: 
+relationships:
+  - type: "depends on"
+    target: "transform-extract-keywords-001"
+    description: "Extracts keywords as the basis for summarization."
+author: "Your Name"
+keywords: ["summarization", "text processing", "NLP"]
+abstract: "This transformation takes long-form text and condenses it into concise key points by extracting essential information."
+dynamic_attributes:
+  polarity:
+    axis: "Compression-Expansion"
+    current_state: "Compression"
+  vibration_level: "High"
+  rhythm:
+    cycle: "On-Demand"
+    last_executed: "2025-01-01T00:00:00Z"
+  energy:
+    masculine: 0.7
+    feminine: 0.3
+
+---
+
+## Input Specifications
+input_format: "Plain Text"
+input_fields:
+  - name: "source_text"
+    type: "string"
+    description: "The full text to be summarized."
+examples:
+  - input: "The brain processes reality through holographic systems and reaction-diffusion patterns..."
+    description: "Summarizing a paragraph from an academic paper."
+
+---
+
+## Transformation Logic
+steps:
+  - step_number: 1
+    description: "Extract key phrases and concepts from the source text."
+    method: "Keyword Extraction"
+    parameters:
+      - name: "language_model"
+        value: "GPT-based keyword extractor"
+    examples:
+      - input: "The brain processes reality through holographic systems and reaction-diffusion patterns..."
+        output: "Key phrases: 'brain processes', 'holographic systems', 'reaction-diffusion patterns'"
+  - step_number: 2
+    description: "Group related phrases into coherent sentences."
+    method: "Sentence Synthesis"
+    parameters:
+      - name: "max_length"
+        value: 120
+    examples:
+      - input: "Key phrases: 'brain processes', 'holographic systems', 'reaction-diffusion patterns'"
+        output: "The brain processes reality using holographic systems and reaction-diffusion patterns."
+
+---
+
+## Output Specifications
+output_format: "Plain Text"
+output_fields:
+  - name: "summary"
+    type: "string"
+    description: "A concise summary of the source text."
+examples:
+  - output: "The brain processes reality using holographic systems and reaction-diffusion patterns."
+    description: "Summarized output of the input text."
+
+---
+
+## Implementation Strategies
+implementation_tips:
+  - "Use pre-trained language models for effective keyword extraction."
+  - "Tune summarization length based on the complexity of the source text."
+
+---
+
+## Related Items
+related_items:
+  - type: "inspired by"
+    target: "framework-summarization-001"
+    description: "Framework defining best practices for summarization tasks."
+
+---
+
+## Binary Attachments
+binary_attachments:
+  - name: "Summarization Script"
+    type: "script/python"
+    url: "https://example.com/summarization-script.py"

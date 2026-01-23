@@ -1,0 +1,24 @@
+---
+version: 1.0
+name: "Model Registry"
+stepNumber: 0
+universeID: Universal
+---
+
+## Intentions
+
+*   **Purpose:** To provide a set of core AI models for the framework.
+*   **Values:**  Accuracy, Transparency
+*   **Scope:** Definition of the base models that will be called upon to transform text.
+*   **Future Orientation:** Models will be updated, changed, refined over time.
+
+## Core Components
+
+*   **Lexicon:**
+   *   **concept: gemini-2.0-flash-exp
+        *   **attributes: "modelType: text", "task: all", "version: 2.0"
+
+## Guidelines
+
+*   **Text Narratives:**
+    *   "Use the listed models to perform text generation and transformation."

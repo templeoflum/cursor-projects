@@ -1,0 +1,395 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Image Gallery</title>
+    <style>
+        /* Basic styles for layout and aesthetics */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        .image-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 15px;
+            width: 300px;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+            position: relative; /* For positioning delete button */
+        }
+        .image-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .metadata {
+            margin-top: 10px;
+        }
+        .metadata strong {
+            display: inline-block;
+            width: 120px;
+        }
+        .tags {
+            margin-top: 10px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin: 2px;
+            font-size: 12px;
+        }
+        .edit-button, .delete-button {
+            margin-top: 10px;
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .edit-button:hover, .delete-button:hover {
+            background-color: #0056b3;
+        }
+        .delete-button {
+            background-color: #dc3545;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        .delete-button:hover {
+            background-color: #c82333;
+        }
+        .flash-message {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .flash-message.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .flash-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        /* Styles for prompt truncation */
+        .prompt-container {
+            margin-top: 10px;
+        }
+        .prompt-text {
+            display: inline;
+        }
+        .read-more {
+            color: #007BFF;
+            cursor: pointer;
+            margin-left: 5px;
+            font-size: 14px;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        /* Pagination Styles - Hidden in Infinite Scroll */
+        .pagination {
+            display: none;
+        }
+        /* Loader Styles */
+        #loader {
+            text-align: center;
+            padding: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Image Gallery</h1>
+
+    <!-- Flash Messages for User Feedback -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash-message {{ category }}">
+              {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <!-- Search Form (Optional) -->
+    <form method="GET" action="{{ url_for('index') }}">
+        <input type="text" name="search" placeholder="Search by prompt or tags..." value="{{ search_query }}">
+        <input type="submit" value="Search">
+    </form>
+
+    <!-- Upload Link -->
+    <p><a href="{{ url_for('upload') }}">Upload a new image</a></p>
+
+    <!-- Image Gallery -->
+    <div class="gallery" id="gallery">
+        {% for image in images %}
+        <div class="image-card">
+            <img src="{{ url_for('static', filename='images/' ~ image.image_path) }}" alt="AI Image">
+            <div class="metadata">
+                <strong>Prompt:</strong> 
+                <div class="prompt-container">
+                    {% if image.prompt and image.prompt|length > 100 %}
+                        <span class="prompt-text">
+                            {{ image.prompt[:100] }}<span id="dots-{{ image.id }}">...</span><span id="more-{{ image.id }}" style="display: none;">{{ image.prompt[100:] }}</span>
+                        </span>
+                        <span class="read-more" id="btn-{{ image.id }}" onclick="togglePrompt({{ image.id }})">Read more</span>
+                    {% elif image.prompt %}
+                        {{ image.prompt }}
+                    {% else %}
+                        <em>No prompt available.</em>
+                    {% endif %}
+                </div><br>
+                <strong>Seed:</strong> {{ image.seed if image.seed else 'N/A' }}<br>
+                <strong>Model:</strong> {{ image.model if image.model else 'N/A' }}<br>
+                <strong>Additional Params:</strong> {{ image.additional_params if image.additional_params else 'N/A' }}
+            </div>
+            {% if image.tags %}
+            <div class="tags">
+                {% for tag in image.tags.split(',') %}
+                <span class="tag">{{ tag.strip() }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <a href="{{ url_for('edit', image_id=image.id) }}" class="edit-button">Edit Tags</a>
+            <button class="delete-button" onclick="confirmDeletion(event, {{ image.id }})">Delete</button>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Loader -->
+    <div id="loader">
+        <p>Loading more images...</p>
+    </div>
+
+    <!-- Pagination Controls - Hidden in Infinite Scroll -->
+    <div class="pagination">
+        {% if page > 1 %}
+            <a href="{{ url_for('index', page=page-1, search=search_query) }}">Previous</a>
+        {% endif %}
+
+        <span>Page {{ page }} of {{ total_pages }}</span>
+
+        {% if page < total_pages %}
+            <a href="{{ url_for('index', page=page+1, search=search_query) }}">Next</a>
+        {% endif %}
+    </div>
+
+    <script>
+        let currentPage = {{ page }};
+        const totalPages = {{ total_pages }};
+        let isLoading = false;
+        const gallery = document.getElementById('gallery');
+        const loader = document.getElementById('loader');
+        const searchQuery = "{{ search_query }}";
+
+        // Function to handle prompt truncation
+        function togglePrompt(id) {
+            const dots = document.getElementById(`dots-${id}`);
+            const moreText = document.getElementById(`more-${id}`);
+            const btnText = document.getElementById(`btn-${id}`);
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less";
+                moreText.style.display = "inline";
+            }
+        }
+
+        // Function to handle deletion confirmation
+        function confirmDeletion(event, imageId) {
+            event.preventDefault();
+            if (confirm("Are you sure you want to delete this image? This action cannot be undone.")) {
+                // Create a form dynamically and submit it
+                var form = document.createElement('form');
+                form.method = 'POST';
+                form.action = '/delete/' + imageId;
+
+                document.body.appendChild(form);
+                form.submit();
+            }
+        }
+
+        // Function to load more images
+        async function loadMoreImages() {
+            if (isLoading || currentPage >= totalPages) return;
+            isLoading = true;
+            loader.style.display = 'block';
+            currentPage += 1;
+
+            try {
+                const response = await fetch(`/load_images?page=${currentPage}&per_page=20&search=${encodeURIComponent(searchQuery)}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+
+                data.images.forEach(image => {
+                    // Create image card
+                    const imageCard = document.createElement('div');
+                    imageCard.className = 'image-card';
+
+                    // Image Element
+                    const img = document.createElement('img');
+                    img.src = `/static/images/${image.image_path}`;
+                    img.alt = 'AI Image';
+                    img.loading = 'lazy';  // Enable lazy loading
+                    imageCard.appendChild(img);
+
+                    // Metadata Div
+                    const metadata = document.createElement('div');
+                    metadata.className = 'metadata';
+
+                    // Prompt
+                    const promptLabel = document.createElement('strong');
+                    promptLabel.textContent = 'Prompt:';
+                    metadata.appendChild(promptLabel);
+
+                    const promptContainer = document.createElement('div');
+                    promptContainer.className = 'prompt-container';
+
+                    if (image.prompt && image.prompt.length > 100) {
+                        const promptText = document.createElement('span');
+                        promptText.className = 'prompt-text';
+                        promptText.innerHTML = `${image.prompt.substring(0, 100)}<span id="dots-${image.id}">...</span><span id="more-${image.id}" style="display: none;">${image.prompt.substring(100)}</span>`;
+                        promptContainer.appendChild(promptText);
+
+                        const readMore = document.createElement('span');
+                        readMore.className = 'read-more';
+                        readMore.id = `btn-${image.id}`;
+                        readMore.textContent = 'Read more';
+                        readMore.onclick = () => togglePrompt(image.id);
+                        promptContainer.appendChild(readMore);
+                    } else if (image.prompt) {
+                        promptContainer.textContent = image.prompt;
+                    } else {
+                        const noPrompt = document.createElement('em');
+                        noPrompt.textContent = 'No prompt available.';
+                        promptContainer.appendChild(noPrompt);
+                    }
+
+                    metadata.appendChild(promptContainer);
+                    metadata.appendChild(document.createElement('br'));
+
+                    // Seed
+                    const seedLabel = document.createElement('strong');
+                    seedLabel.textContent = 'Seed:';
+                    metadata.appendChild(seedLabel);
+
+                    const seedValue = document.createElement('span');
+                    seedValue.textContent = image.seed ? image.seed : 'N/A';
+                    metadata.appendChild(seedValue);
+                    metadata.appendChild(document.createElement('br'));
+
+                    // Model
+                    const modelLabel = document.createElement('strong');
+                    modelLabel.textContent = 'Model:';
+                    metadata.appendChild(modelLabel);
+
+                    const modelValue = document.createElement('span');
+                    modelValue.textContent = image.model ? image.model : 'N/A';
+                    metadata.appendChild(modelValue);
+                    metadata.appendChild(document.createElement('br'));
+
+                    // Additional Params
+                    const paramsLabel = document.createElement('strong');
+                    paramsLabel.textContent = 'Additional Params:';
+                    metadata.appendChild(paramsLabel);
+
+                    const paramsValue = document.createElement('span');
+                    paramsValue.textContent = image.additional_params ? image.additional_params : 'N/A';
+                    metadata.appendChild(paramsValue);
+
+                    imageCard.appendChild(metadata);
+
+                    // Tags
+                    if (image.tags) {
+                        const tagsDiv = document.createElement('div');
+                        tagsDiv.className = 'tags';
+                        image.tags.split(',').forEach(tag => {
+                            const tagSpan = document.createElement('span');
+                            tagSpan.className = 'tag';
+                            tagSpan.textContent = tag.trim();
+                            tagsDiv.appendChild(tagSpan);
+                        });
+                        imageCard.appendChild(tagsDiv);
+                    }
+
+                    // Edit Tags Button
+                    const editButton = document.createElement('a');
+                    editButton.href = `/edit/${image.id}`;
+                    editButton.className = 'edit-button';
+                    editButton.textContent = 'Edit Tags';
+                    imageCard.appendChild(editButton);
+
+                    // Delete Button
+                    const deleteButton = document.createElement('button');
+                    deleteButton.className = 'delete-button';
+                    deleteButton.textContent = 'Delete';
+                    deleteButton.onclick = (event) => confirmDeletion(event, image.id);
+                    imageCard.appendChild(deleteButton);
+
+                    // Append to gallery
+                    gallery.appendChild(imageCard);
+                });
+
+                // Update has_more flag
+                if (!data.has_more) {
+                    window.removeEventListener('scroll', handleScroll);
+                    loader.innerHTML = '<p>No more images to load.</p>';
+                }
+            } catch (error) {
+                console.error('Error loading more images:', error);
+                loader.innerHTML = '<p>An error occurred while loading images.</p>';
+                window.removeEventListener('scroll', handleScroll);
+            } finally {
+                loader.style.display = 'none';
+                isLoading = false;
+            }
+        }
+
+        // Function to handle scroll event
+        function handleScroll() {
+            const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+            if (scrollTop + clientHeight >= scrollHeight - 5) {  // Threshold of 5px
+                loadMoreImages();
+            }
+        }
+
+        // Debounce function to optimize scroll event handling
+        function debounce(func, delay) {
+            let debounceTimer;
+            return function() {
+                const context = this;
+                const args = arguments;
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => func.apply(context, args), delay);
+            }
+        }
+
+        // Initial Load
+        window.addEventListener('scroll', debounce(handleScroll, 200));
+    </script>
+</body>
+</html>

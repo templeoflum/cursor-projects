@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Tags</title>
+    <style>
+        /* Basic styles for layout and aesthetics */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        .edit-form {
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ffc107;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #e0a800;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .current-tags {
+            margin-bottom: 15px;
+        }
+        .current-tags span {
+            background-color: #e0e0e0;
+            color: #333;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin: 2px;
+            display: inline-block;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Tags</h1>
+    <div class="edit-form">
+        <form method="POST">
+            <label for="tags">Tags (comma-separated):</label><br>
+            <input type="text" name="tags" id="tags" value="{{ current_tags }}" placeholder="e.g., futuristic, fantasy"><br>
+
+            <input type="submit" value="Update Tags">
+        </form>
+        <p>Current Tags:</p>
+        <div class="current-tags">
+            {% for tag in current_tags.split(',') %}
+                <span>{{ tag.strip() }}</span>
+            {% endfor %}
+        </div>
+        <a href="{{ url_for('index') }}">Back to Gallery</a>
+    </div>
+</body>
+</html>

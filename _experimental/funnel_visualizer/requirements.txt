@@ -1,0 +1,5 @@
+# Marketing Funnel Tool dependencies
+pyyaml
+Pillow
+reportlab
+flask

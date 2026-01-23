@@ -1,0 +1,9 @@
+# Word to PDF Converter dependencies
+mammoth
+markdown
+pdfkit
+Pillow
+python-docx
+watchdog
+beautifulsoup4
+lxml

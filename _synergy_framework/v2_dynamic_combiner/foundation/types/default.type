@@ -1,0 +1,53 @@
+---
+version: 1.0
+name: "Default Archetype framework"
+typeID: "default"
+universeID: "default"
+inheritsFrom: "archetype-default"
+relationships:
+  - type: "aligned with"
+    target: "archetype-dynamic-default"
+    description: "Based on the universal dynamic archetype for balanced interactions."
+author: "System Designer"
+keywords: ["archetype", "default", "neutral", "universal"]
+abstract: "A neutral archetype designed to provide a balanced and adaptable foundation for dynamic systems."
+
+dynamic_attributes:
+  source: "dynamics/default.dyn"
+  tuning_function: "align_with_default_cycles"
+
+## Core Characteristics
+traits:
+  - name: "Adaptability"
+    description: "The ability to adjust to dynamic changes and maintain balance."
+    attributes:
+      - name: "Resilience"
+        type: "integer"
+        value: 10
+        description: "Capacity to recover from disruptions."
+  - name: "Equilibrium"
+    description: "A commitment to maintaining dynamic balance and coherence."
+
+## Patterns
+patterns:
+  - name: "Dynamic Alignment"
+    description: "Ensures the archetype aligns with the system's dynamic flow."
+  - name: "Recursive Modulation"
+    description: "Facilitates growth through repeated adjustments to dynamic attributes."
+
+## Related Archetypes
+related_archetypes:
+  - name: "Harmonic"
+    relationship: "aligned"
+    influence: "Emphasizes resonance and coherence."
+    target: "archetype-harmonic"
+  - name: "Adaptive"
+    relationship: "complementary"
+    influence: "Focuses on flexibility and scalability."
+    target: "archetype-adaptive"
+
+## Notes and Commentary
+notes:
+  - description: "This archetype serves as a template for balancing dynamic interactions across systems."
+    author: "System Designer"
+    timestamp: "2025-01-20T10:00:00Z"

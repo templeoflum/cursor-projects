@@ -1,0 +1,89 @@
+---
+version: 1.0
+name: "Rule Template"
+ruleID: "template"
+universeID: "Universal"
+author: "System Designer"
+tags: ["rules", "default", "balanced", "universal"]
+description: "A neutral rule framework designed to guide balanced and recursive system interactions."
+
+---
+
+## 1. Structure and Flow: Recursive and Resonant
+rules:
+  - name: "Recursive Scales"
+    description: "Ensure each layer mirrors the larger system structure, aligning with recursive patterns."
+    guidelines:
+      - "Use fractal patterns to guide flow and revisitation of themes."
+      - "Balance recurrence with forward momentum."
+  - name: "Principle Integration"
+    description: "Incorporate core principles across scales."
+    principles:
+      - "Mentalism: Emphasize thought and intention as generative forces."
+      - "Correspondence: Bridge micro and macro scales through recurring patterns."
+      - "Vibration: Reflect rhythm and harmonic resonance in interactions."
+      - "Polarity: Highlight the interplay of opposites to reveal unity."
+      - "Rhythm: Reflect cycles of action and rest."
+      - "Cause and Effect: Show cascading impact of choices."
+      - "Gender: Balance active (creative) and receptive (reflective) forces."
+
+## 2. Micro-Level Harmony: Poetic and Purposeful
+rules:
+  - name: "Rhythm and Proportion"
+    description: "Guide pacing and balance with Fibonacci sequences and golden ratios."
+    guidelines:
+      - "Balance short, impactful statements with longer, flowing ones."
+      - "Align rhythms across sentences and sections."
+  - name: "Layered Resonance"
+    description: "Evoke depth through vivid imagery and thematic amplification."
+    guidelines:
+      - "Ensure micro-level elements amplify macro-level themes."
+
+## 3. Alignment Across Scales: Unified and Immersive
+rules:
+  - name: "Layered Meaning"
+    description: "Symbols, metaphors, and rhythms resonate across scales."
+    guidelines:
+      - "Ensure micro (detail), meso (sections), and macro (entire system) levels align dynamically."
+  - name: "Continuity Threads"
+    description: "Close each section by echoing its core insight while preparing for the next."
+    guidelines:
+      - "Seamlessly transition between connected layers."
+
+## 4. Language and Style: Balanced and Grounded
+rules:
+  - name: "Abstract and Concrete Balance"
+    description: "Anchor abstract principles with tangible examples."
+    guidelines:
+      - "Ground abstract ideas in concrete language to ensure accessibility."
+  - name: "Dynamic Reflection"
+    description: "Emphasize interaction over static descriptions."
+    guidelines:
+      - "Use active phrasing and dynamic verbs to embody movement and vibration."
+
+## 5. Validation Checklist
+checklist:
+  - "Does the structure reflect recursive patterns and fractal coherence?"
+  - "Are transitions seamless and aligned with overarching themes?"
+  - "Do rhythm and proportions create harmonic flow?"
+  - "Are language and style balanced between abstraction and concreteness?"
+
+## 6. Metrics and Evaluation
+metrics:
+  quantitative:
+    - name: "Sentence Length Analysis"
+      description: "Ensure variety and balance using Fibonacci and golden ratio sequences."
+    - name: "Paragraph Proportions"
+      description: "Use golden ratio splits for proportional development."
+  qualitative:
+    - name: "Emotional Resonance"
+      description: "Evaluate whether the framework evokes intended depth and clarity."
+    - name: "Thematic Integrity"
+      description: "Ensure themes are recursive, resonant, and unified across scales."
+
+---
+
+attachments:
+  - name: "Default Rule Diagram"
+    type: "image/png"
+    url: "https://example.com/default-rule-diagram.png"

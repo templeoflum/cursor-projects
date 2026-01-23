@@ -1,0 +1,75 @@
+
+*   **CategoryCode:** A two-letter code representing the file category.
+*   **ModuleCode:** A two- or three-letter code representing the associated module (use `xx` or `gen` if not module-specific).
+*   **FileType:** The file type identifier or extension.
+
+## 2. Category Codes
+
+The following category codes are used:
+
+| Category       | Code |
+|----------------|------|
+| Foundation     | `fn` |
+| Application    | `ap` |
+| Implementation | `im` |
+| Execution      | `ex` |
+| Design         | `ds` |
+
+## 3. Module Codes
+
+The following module codes are used (or use `xx` or `gen` if module-specific code):
+
+| Module                       | Code |
+|-------------------------------|------|
+| Multiverse Manager            | `mm` |
+| Universe Architect           | `ua` |
+| Story Composer              | `sc` |
+| Sensory Designer             | `sd` |
+| Character Designer           | `cd` |
+| Prompt Management System     | `pm` |
+| Feedback & Testing System     | `ft` |
+| Synthesis Engine            | `se` |
+| Live Input/Output System    | `io` |
+| Performance Director         | `pd` |
+| Real-Time Control System      | `rc` |
+| Dynamic Synthesis            | `dy` |
+| Feedback Loop Integrator    | `fi` |
+| Dynamic Collaboration Layer | `dc` |
+| Temporal Modulation         | `tm` |
+| Cross-Domain Systems          | `xd` |
+| Universal Dynamic Framework | `ud` |
+| Interactive Resonance Engine | `ir` |
+| General  | `xx` |
+| General | `gen` |
+
+## 4. File Type Handling
+
+Maintain existing file type identifiers (or use these abbreviated types)
+
+| Category     | File Types                                                                                                                              |
+|--------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| Foundation    | `.law`, `.dyn`, `.tag`, `.seed`, `.pol`, `.vib`, `.cau`, `.eff`, `.chr`, `.spn`, `.ene`, `.lgt`, `.snd`, `.txt`, `.typ`, `.explore`|
+| Application   | `.reso`, `.tun`, `.prm`, `.sta`, `.cnv`, `.pac`, `.rhy`, `.pls`, `.bre`, `.cyl`, `.gam`, `.spd`  |
+| Implementation| `.rlw`, `.frm`, `.ln`, `.mdl`, `.atm`, `.clk`, `.div`, `.add`, `.mlt`, `.rnd`, `.glt`, `.utl`, `.key`, `.cha`, `.prb`, `.rlg`, `.grn`, `.flw`|
+| Execution     | `.tsk`, `.sty`, `.frm`, `.ton`, `.pit`, `.tmb`, `.clf`, `.dst`, `.msh`, `.flx`, `.cog`, `.per`, `.seq`, `.syn`, `.fx`                   |
+| Design        | `.shd`, `.ppr`, `.ess`, `.bok`, `.lns`, `.dve`, `.aud`, `.vid`, `.img`, `.ast`, `.clp`, `.lop`, `.crt`, `.org`                         |
+
+## 5. Naming Convention Examples
+
+*   Foundation Module (ElFoundation): `fn.el.law.md`
+*   Application Module (Story Composer): `ap.sc.prm.md`
+*  Implementation Module (Synthesis Engine): `im.se.flw`
+*   Execution Module (Performance Director): `ex.pd.tsk`
+*   Design Module (Character Designer): `ds.cd.img`
+*   Module-Agnostic File: `ds.xx.ess.md`
+
+## 6. Guidelines for Consistency
+*   **Short Codes:** Keep category and module codes under 3 letters.
+*   **Unique Codes:** Ensure codes are unique to prevent confusion.
+*   **Reference Table:** Document all codes in a shared resource.
+*   **Flexible Structure:** Allow minor variations when necessary but adhere to the core structure.
+*   **Standard Extensions:** Use standard extensions for compatibility (e.g., `.json`, `.yaml`).
+*   **Iterate and Refine:** Periodically review the convention for improvements.
+
+## 7.  Final Words
+By following this naming convention, we ensure clarity and consistency in our file structure, making it easier to manage and expand the system.

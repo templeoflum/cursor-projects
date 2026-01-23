@@ -1,0 +1,54 @@
+---
+version: 1.0
+name: "Surreal Entity: Luminaris"
+sheetID: "sheet-luminaris-001"
+universeID: "Auralis"
+inheritsFrom: "archetype-surreal"
+relationships:
+  - name: "Aeloria"
+    type: "Mentor"
+    influence: "Guides Aeloria through surreal challenges and dreamscapes."
+    target: "sheet-aeloria-001"
+  - name: "The Shadow"
+    type: "Adversary"
+    influence: "Represents Luminaris' inner and external conflict."
+    target: "sheet-shadow-001"
+author: "World Designer"
+keywords: ["surreal", "mentor", "guide", "archetype"]
+abstract: "Luminaris is a surreal entity representing wisdom, fluidity, and the guidance of dreamers through surreal worlds."
+
+dynamic_attributes:
+  source: "path/to/test-dynamic-001.dyn"
+  tuning_function: "align_with_surreal_cycles"
+
+## Core Attributes
+attributes:
+  - name: "Wisdom"
+    type: "float"
+    value: 0.9
+    description: "Represents deep knowledge of surreal realms."
+  - name: "Alignment"
+    type: "float"
+    value: 0.7
+    description: "Moral alignment, balancing freedom and order."
+  - name: "Fluidity"
+    type: "float"
+    value: 0.6
+    description: "Ability to adapt to surreal and changing landscapes."
+
+## History and Context
+origin:
+  description: "Luminaris emerged from the surreal Lightwell, a source of infinite inspiration and fluid wisdom."
+  related_events:
+    - event: "Encountered the Shadow of Auralis."
+      timestamp: "2023-12-01T08:00:00Z"
+      influence: "Marked the beginning of Luminaris' eternal rivalry with the shadow."
+    - event: "Guided Aeloria to the Dream Nexus."
+      timestamp: "2024-06-15T15:00:00Z"
+      influence: "Solidified Luminaris' role as a mentor in surreal landscapes."
+
+## Notes and Annotations
+notes:
+  - description: "Luminaris embodies the fluid balance between dreamlike wonder and grounded guidance."
+    author: "World Designer"
+    timestamp: "2025-01-20T10:00:00Z"

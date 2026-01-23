@@ -1,0 +1,59 @@
+---
+version: # version number of the sheet document (e.g., 1.0)
+name: # text - Name of the sheet (e.g., "Character Profile", "Entity Data")
+sheetID: # unique identifier for the sheet
+universeID: # text - The universe or domain to which this sheet belongs (e.g., "Auralis", "Universal")
+inheritsFrom: # text - OPTIONAL: Parent sheets, archetypes, or frameworks influencing this sheet
+relationships: # list of mappings - OPTIONAL: Connections to other sheets or files
+  - type: # text (e.g., "inspired by", "extends", "depends on")
+    target: # text - Target file or sheet ID
+    description: # text - Explanation of the relationship
+author: # text - OPTIONAL: Creator of the sheet
+keywords: # list of text - Tags or keywords for categorization and search
+abstract: # text - OPTIONAL: A concise description of the sheet's purpose or content
+
+
+dynamic_attributes:
+  source: "dynamics/default.dyn"
+  tuning_function: "align_with_default_cycles"
+
+
+---
+
+## Core Attributes
+attributes:
+  - name: # text - Attribute name (e.g., "Strength", "Durability", "Alignment")
+    type: # text - Data type of the attribute (e.g., "string", "integer", "boolean")
+    value: # text or number - Current value of the attribute
+    description: # text - OPTIONAL: Description of the attribute
+  - name: # text
+    type: # text
+    value: # text or number
+    description: # text
+
+---
+
+## History and Context
+origin:
+  description: # text - Origin or background of the entity
+  related_events: # OPTIONAL: List of significant events or milestones
+    - event: # text - Description of the event
+      timestamp: # timestamp - Date or time of the event
+      influence: # text - Effect of the event on the entity
+
+---
+
+## Relationships
+relationships:
+  - name: # text - Name of the related entity or object
+    type: # text - Nature of the relationship (e.g., "ally", "antagonist", "dependent")
+    influence: # text - How this relationship affects the entity or object
+    target: # text - Target file or sheet ID
+
+---
+
+## Notes and Annotations
+notes:
+  - description: # text - Specific notes or commentary about the entity
+    author: # text - OPTIONAL: Name of the author of the note
+    timestamp: # timestamp - OPTIONAL: Date or time when the note was added

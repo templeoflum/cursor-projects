@@ -1,0 +1,69 @@
+---
+version: # version number of the document (e.g., 1.0)
+name:  # text - Title of the document (e.g., "The Overarching Theme")
+stepNumber: # integer - The step in the narrative development process (e.g., 1)
+universeID: # text (e.g., "Auralis", or "Universal")
+inheritsFrom: # text - OPTIONAL: The universe or archetype influencing this document
+relationships: # list of mappings - OPTIONAL: Structured relationships to other documents/universes
+  - type: # text (e.g., "supports", "contradicts", "expands")
+    target: # text (ID of the target document/universe)
+    description: # text - Brief explanation of the relationship
+author: # text - OPTIONAL: Author or creator of the document
+keywords: # list of text - OPTIONAL: Keywords related to the document
+abstract: # text - OPTIONAL: A summary or concise description of the document's content and purpose
+data_types: # list of text - OPTIONAL: Define custom data types used within this document (e.g., "ColorPalette", "SpatialCoordinates")
+
+dynamic_attributes:
+  source: "dynamics/default.dyn"
+  tuning:
+    file: "tuning/default.tune"
+    mode: "Resonant"
+    description: "Apply resonant tuning configurations for amplified modulation."
+
+
+---
+
+## Intentions
+purpose: # text - A clear and concise statement of the document's overall objective
+values: # list of text - Ethical, philosophical, or creative values guiding this document
+scope: # text - Description of the design or application boundaries
+future_orientation: # text - How this document adapts to future changes and builds upon itself
+
+## Core Components
+lexicon:
+  - concept: # text - Key term (e.g., "PrimaryTheme")
+    description: # text - Explanation of the concept
+    attributes: # list of mappings - OPTIONAL: Defining properties
+      - name: # text - Attribute name
+        type: # text (e.g., "string", "integer", "boolean")
+        description: # text - OPTIONAL
+patterns:
+  - pattern: # text - Name of the pattern
+    description: # text - Explanation of how the pattern works
+master_key:
+  integrators:
+    - integrator: # text - A unifying principle or connector
+      role: # text - The integrator's role within the structure
+
+## Guidelines
+text_narratives: # list of text - Rules or guidelines for text and story handling
+visual_concepts: # list of text - Rules or principles for design and visuals
+interactive_design: # list of text - Best practices for user experiences and interaction
+
+## Content
+content: # Main content in Markdown format
+  # (The body of your document goes here.)
+
+## Implementation Strategies
+implementation_strategies: # list of text - Strategies for sustaining or evolving this document
+  - # Text-based strategies
+
+## Related Items
+related_items: # OPTIONAL: Links to other document IDs
+  - # Text-based IDs or relationships
+
+## Binary Attachments
+binary_attachments: # OPTIONAL: Supporting files or links
+  - name: # text - Name of the attachment
+    type: # text (e.g., "image/png", "audio/mpeg")
+    url: # text - URL or file path for the attachment

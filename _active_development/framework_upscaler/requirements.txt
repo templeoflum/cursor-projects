@@ -1,0 +1,4 @@
+# AI Framework Upscaler dependencies
+requests
+python-dotenv
+pyyaml

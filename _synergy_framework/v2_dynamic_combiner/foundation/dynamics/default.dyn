@@ -1,0 +1,31 @@
+version: 1.0
+name: "Default Dynamic Attribute Configuration"
+dynID: "default-dyn-001"
+universeID: "Universal"
+author: "System Designer"
+tags: ["dynamic", "default", "universal"]
+abstract: "A default dynamic attribute configuration designed for adaptability and coherence."
+
+seed: 0.33
+use_unified_seed: true
+
+attributes:
+  polarity:
+    axis: "Internal-External"
+    fluctuation_range: "-0.5 to +0.5"
+    offset_range: "-0.2 to +0.2"
+    default_state: "Balanced"
+  vibration_level:
+    default_intensity: 0.8
+    fluctuation_range: "0 to 1"
+    offset_range: "-0.1 to +0.1"
+  rhythm:
+    cycle: "Daily"
+    phase:
+      phases: ["growth", "peak", "decline", "reset"]
+      degree: 0.3
+      seed: 0.25
+  energy:
+    creative: 0.5
+    receptive: 0.5
+    offset_range: "-0.15 to +0.15"

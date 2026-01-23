@@ -1,0 +1,67 @@
+---
+lawsID: "default"
+name: "Default Law Template"
+description: "A balanced set of universal principles and dynamic rules for general interactions."
+
+dynamic_attributes:
+  polarity:
+    axis: "Stability-Change"
+    default_state: "Balanced"
+    fluctuation_range: "-0.5 to +0.5"
+    offset_range: "-0.2 to +0.2"
+  vibration_level:
+    default_intensity: "Medium"
+    fluctuation_range: "-0.3 to +0.3"
+    offset_range: "-0.1 to +0.1"
+  rhythm:
+    cycle: "Daily"
+    phase:
+      phases: ["growth", "peak", "decline", "reset"]
+      degree: 0.3
+      seed: 0.25
+seed: 0.35
+
+universal_principles:
+  - name: "Mentalism"
+    description: "All actions begin with intention and mental focus."
+    effect: "Prompts influence dynamic attributes and system cycles."
+    implementation:
+      prompts:
+        intention: "Create coherence across universal rhythms."
+        query: "How can stability enhance polarity shifts?"
+  - name: "Polarity"
+    description: "Balance is achieved through the interplay of opposites."
+    effect: "Guides modulation of stability and change dynamically."
+  - name: "Vibration"
+    description: "All entities vibrate dynamically, influencing intensity and flow."
+    effect: "Adjusts energy and activity levels throughout the system."
+  - name: "Rhythm"
+    description: "Cycles guide the natural progression of phases."
+    effect: "Attributes align with rhythmic cycles for dynamic coherence."
+  - name: "Correspondence"
+    description: "Patterns and cycles propagate across system layers."
+    effect: "Ensures interactions between related files and systems."
+  - name: "Cause and Effect"
+    description: "Every action creates a ripple effect across the system."
+    effect: "Changes in one file dynamically influence related elements."
+  - name: "Gender"
+    description: "Dynamic balance emerges from creative and receptive energies."
+    effect: "Enhances interactions through the interplay of energies."
+
+file_variation_rules:
+  - fileType: ".style"
+    variations:
+      - principle: "Polarity"
+        allowable_range: "-0.4 to +0.4"
+        example_effects: "Shifts visual balance between stability and experimentation."
+      - principle: "Vibration"
+        allowable_range: "-0.2 to +0.2"
+        example_effects: "Modulates intensity for dynamic visual interactions."
+  - fileType: ".sheet"
+    variations:
+      - principle: "Rhythm"
+        allowable_range: "Daily to Weekly"
+        example_effects: "Aligns character traits with cyclical rhythms."
+      - principle: "Energy"
+        allowable_range: "-0.3 to +0.3"
+        example_effects: "Balances creative-receptive dynamics in character attributes."

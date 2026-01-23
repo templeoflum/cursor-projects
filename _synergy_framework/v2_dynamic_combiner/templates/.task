@@ -1,0 +1,47 @@
+---
+version: # version of the `.task` format (e.g., 1.0)
+taskName: # short descriptive name for the task
+taskID: # unique identifier for the task
+module: # associated module name (e.g., "Prompt Manager", "Reso Generator")
+author: # author or owner of the task definition
+tags: # optional - keywords or tags for easy categorization and searching
+dependencies: # optional - related files, functions, or tasks required for execution
+  - taskID: # ID of a related task
+    description: # how this task depends on or relates to the dependency
+
+---
+
+## Task Description
+description: # a high-level overview of what the task accomplishes, written in plain language
+
+## Functional Specifications
+inputFormat: # description of the input expected (e.g., plain text, JSON, Markdown)
+outputFormat: # description of the output generated (e.g., `.reso`, JSON, transformed text)
+steps: # list of step-by-step instructions for transforming the input
+  - stepNumber: # numeric identifier for the step
+    description: # detailed explanation of the step
+    action: # the specific action or transformation performed in this step
+    examples: # optional - example input/output for the step
+      - input: # example input for this step
+      - output: # example output after this step
+
+## Operational Guidance
+constraints: # list of rules or limitations to consider when executing the task
+  - # description of constraint
+assumptions: # optional - assumptions made about the input or execution environment
+  - # description of assumption
+validationCriteria: # list of criteria to verify the success of the task
+  - # success criterion
+errorHandling: # optional - instructions for handling errors or unexpected inputs
+  - errorType: # type of error (e.g., invalid input)
+    action: # action to take (e.g., log, retry, abort)
+
+## Implementation Notes
+notes: # optional - any special considerations, tips, or best practices for implementing the task
+  - # description of note
+
+## Attachments
+attachments: # optional - files, links, or external references related to the task
+  - name: # name of the attachment
+    type: # file type (e.g., "image/png", "text/markdown")
+    url: # link or path to the attachment

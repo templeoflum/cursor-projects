@@ -1,0 +1,54 @@
+---
+version: 1.0
+name: "Default Sheet Framework"
+sheetID: "default"
+universeID: "default"
+inheritsFrom: "archetype-default"
+relationships:
+  - name: "Entity A"
+    type: "Ally"
+    influence: "Collaborates with Luminaris in universal cycles."
+    target: "sheet-entity-a"
+  - name: "Entity B"
+    type: "Adversary"
+    influence: "Challenges Luminaris' balance and growth."
+    target: "sheet-entity-b"
+author: "System Designer"
+keywords: ["default", "balanced", "entity", "archetype"]
+abstract: "A general-purpose entity representing balance, adaptability, and cyclical interactions."
+
+dynamic_attributes:
+  source: "dynamics/default.dyn"
+  tuning_function: "align_with_default_cycles"
+
+## Core Attributes
+attributes:
+  - name: "Wisdom"
+    type: "float"
+    value: 0.7
+    description: "Represents balanced understanding across systems."
+  - name: "Alignment"
+    type: "float"
+    value: 0.6
+    description: "Represents moral and structural coherence."
+  - name: "Adaptability"
+    type: "float"
+    value: 0.8
+    description: "Ability to shift and adjust across dynamic systems."
+
+## History and Context
+origin:
+  description: "The default entity emerged from the universal framework to ensure stability and adaptability."
+  related_events:
+    - event: "Unified with Entity A during the expansion phase."
+      timestamp: "2024-01-15T10:00:00Z"
+      influence: "Strengthened its collaborative alignment."
+    - event: "Confronted Entity B in the reset phase."
+      timestamp: "2025-03-22T14:30:00Z"
+      influence: "Tested its ability to maintain balance under stress."
+
+## Notes and Annotations
+notes:
+  - description: "This entity serves as a model for balanced interactions and universal cycles."
+    author: "System Designer"
+    timestamp: "2025-01-20T08:00:00Z"

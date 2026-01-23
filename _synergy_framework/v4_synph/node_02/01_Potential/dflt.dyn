@@ -1,0 +1,64 @@
+---
+version: 1.0
+name: "Default 6-Step Dynamic Attributes"
+dynID: "default-six-steps-001"
+universeID: "Synex"
+inheritsFrom: "universal-dynamics"
+author: "System Designer"
+tags: ["6-step", "baseline-0.5", "dynamic-attributes"]
+abstract: "Provides baseline dynamic attributes for the six-step system, each step referencing a default synergy of 0.5."
+
+dynamic_attributes:
+  # Each key corresponds to one of the six steps,
+  # with subfields referencing seeds, offsets, or synergy expansions.
+
+  potential:
+    baseline: 0.5
+    fluctuation_range: "-0.2 to 0.2"
+    offset_range: "-0.05 to 0.05"
+    description: "Step 1: Seeds new expansions. Defaults to 0.5 for easy detection of offset."
+  
+  symmetry:
+    baseline: 0.5
+    fluctuation_range: "-0.15 to 0.15"
+    offset_range: "-0.05 to 0.05"
+    description: "Step 2: Ensures balanced constraints around 0.5."
+
+  flow:
+    baseline: 0.5
+    fluctuation_range: "-0.3 to 0.3"
+    offset_range: "-0.1 to 0.1"
+    description: "Step 3: Governs expansions or velocity of iteration from 0.5."
+
+  connectivity:
+    baseline: 0.5
+    fluctuation_range: "-0.25 to 0.25"
+    offset_range: "-0.1 to 0.1"
+    description: "Step 4: Merges expansions. Linking synergy states around a stable center (0.5)."
+  
+  emergence:
+    baseline: 0.5
+    fluctuation_range: "-0.4 to 0.4"
+    offset_range: "-0.15 to 0.15"
+    description: "Step 5: Realizes new synergy patterns while referencing midpoints at 0.5."
+  
+  recursion:
+    baseline: 0.5
+    fluctuation_range: "-0.1 to 0.1"
+    offset_range: "-0.05 to 0.05"
+    description: "Step 6: Feeds results back to seeds. Typically narrower range to keep cycic stability near 0.5."
+
+principles:
+  # Optionally reference the universal synergy or law files
+  synergy_measure: "E_total"
+  cycic_threshold: "epsilon_cyclic"
+  notes: "Adjust fluctuation_range or offset_range as needed for each step."
+
+seed: 0.5
+use_unified_seed: true
+
+description: |
+  This .dyn file unifies default dynamic attributes for the six steps—Potential, Symmetry, Flow, Connectivity, Emergence, and Recursion.
+  Each step starts at a baseline of 0.5, highlighting any offset from equilibrium.
+  Integrate with synergy engine logic to maintain cycic harmony (E_total ≈ ε_cyclic).
+...

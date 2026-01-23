@@ -1,0 +1,43 @@
+---
+version: 1.0
+name: "Test Dynamic Attribute Set: Surreal Harmony"
+dynID: "test-dynamic-001"
+description: "A test dynamic attribute set for validating Hermetic principles and dynamic interactions."
+
+attributes:
+  polarity:
+    axis: "Dreamlike-Concrete"
+    fluctuation_range: "-0.33 to +0.33"
+    offset_range: "-0.1 to +0.1"
+    default_state: "Dreamlike"
+  vibration_level:
+    base_intensity: 0.75
+    fluctuation_range: "-0.3 to +0.3"
+    offset_range: "-0.1 to +0.1"
+    default_state: "Moderate"
+  rhythm:
+    cycle: "Seasonal"
+    phase:
+      phases: ["growth", "peak", "decline", "reset"]
+      current: "growth"
+      degree: 0.45
+      seed: 0.25
+  energy:
+    creative: 0.6
+    receptive: 0.4
+    offset_range: "-0.1 to +0.1"
+    balanced_state: 0.0
+
+principles:
+  mentalism:
+    prompts:
+      intention: "Guide energy balance through contraction cycles."
+      query: "How does the expansion phase affect polarity stability?"
+cycles:
+  global_phases:
+    - "expansion"
+    - "stability"
+    - "contraction"
+    - "reset"
+  degree: 0.6
+seed: 0.25

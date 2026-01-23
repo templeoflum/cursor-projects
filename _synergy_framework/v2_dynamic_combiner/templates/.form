@@ -1,0 +1,77 @@
+---
+version: # version number of the transform document (e.g., 1.0)
+name: # text - Name of the transformation (e.g., "Summarize Text to Key Points")
+transformID: # unique identifier for the transformation
+universeID: # text (e.g., "Text Processing", "Data", "Universal")
+inheritsFrom: # text - OPTIONAL: Parent transformations or related frameworks influencing this file
+relationships: # list of mappings - OPTIONAL: Connections to other transforms, files, or universes
+  - type: # text (e.g., "depends on", "builds upon")
+    target: # text - Target file or document ID
+    description: # text - Description of the relationship
+author: # text - OPTIONAL: Creator of the transformation
+keywords: # list of text - Tags for categorizing or searching
+abstract: # text - OPTIONAL: A concise description of the transformation process
+
+dynamic_attributes:
+  source: "dynamics/default.dyn"
+  tuning_function: "align_with_default_cycles"
+
+---
+
+## Input Specifications
+input_format: # text - Expected format of the input (e.g., "Plain Text", "Markdown", "JSON")
+input_fields: # list of fields required for the transformation
+  - name: # text - Field name (e.g., "source_text")
+    type: # text - Field type (e.g., "string", "integer", "boolean")
+    description: # text - Description of the input field
+examples:
+  - input: # text - Example input for the transformation
+    description: # text - Context or explanation of the input
+
+---
+
+## Transformation Logic
+steps: # list of ordered steps for the transformation
+  - step_number: # integer - The step order
+    description: # text - Explanation of the transformation at this step
+    method: # text - Method or algorithm used (e.g., "Summarization", "Data Cleaning")
+    parameters: # OPTIONAL: List of parameters for the step
+      - name: # text - Parameter name
+        value: # text - Default value or range
+examples:
+  - input: # text - Example input at this step
+    output: # text - Example output from this step
+
+---
+
+## Output Specifications
+output_format: # text - Expected format of the output (e.g., "Plain Text", "JSON", ".reso File")
+output_fields: # list of fields provided in the output
+  - name: # text - Field name (e.g., "summary")
+    type: # text - Field type (e.g., "string", "integer", "boolean")
+    description: # text - Description of the output field
+examples:
+  - output: # text - Example of the expected output
+    description: # text - Context or explanation of the output
+
+---
+
+## Implementation Strategies
+implementation_tips: # list of tips or best practices for applying this transformation
+  - # text - Description of a tip or best practice
+
+---
+
+## Related Items
+related_items: # OPTIONAL: References to related transformations or files
+  - type: # text - Relationship type (e.g., "inspired by", "depends on")
+    target: # text - Related file or transformation ID
+    description: # text - Explanation of the relationship
+
+---
+
+## Binary Attachments
+binary_attachments: # OPTIONAL: Supporting scripts, datasets, or tools
+  - name: # text - Name of the attachment
+    type: # text (e.g., "script/python", "text/markdown")
+    url: # text - URL or file path

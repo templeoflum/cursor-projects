@@ -1,0 +1,3 @@
+# Smith Noise Synth dependencies
+numpy
+sounddevice

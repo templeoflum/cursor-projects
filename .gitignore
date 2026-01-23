@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment
+.env
+.env.local
+*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Temp files
+*.tmp
+*.temp
+.temp/
+tmp/
+
+# Build outputs
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Large binary files (keep FFmpeg in repo but ignore others)
+# ffmpeg_executables/ - intentionally tracked for video_tool
+
+# Project specific
+.claude/
+
+# AI Image Manager - user content (too large and long filenames)
+_working_tools/ai_image_manager/ai_image_manager/static/images/
+
+# Windows special files
+nul

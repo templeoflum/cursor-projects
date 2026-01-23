@@ -1,0 +1,64 @@
+---
+version: 1.0
+name: "Default Task Framework"
+taskID: "default"
+module: "Universal Task Manager"
+author: "System Designer"
+tags: ["task", "default", "balanced", "universal"]
+dependencies:
+  - taskID: "default"
+    description: "default"
+
+---
+
+## Task Description
+description: "This default task provides a structured approach to executing modular, dynamic tasks within the system."
+
+## Functional Specifications
+inputFormat: "Plain Text or JSON"
+outputFormat: "Transformed Data or YAML"
+steps:
+  - stepNumber: 1
+    description: "Load input data and validate its structure."
+    action: "Parse input format and verify compliance with expected schema."
+    examples:
+      - input: "{\"text\": \"example input\"}"
+        output: "Validated Input Structure."
+  - stepNumber: 2
+    description: "Apply dynamic attributes to transform the input."
+    action: "Use polarity, rhythm, and energy attributes to modulate the data."
+    examples:
+      - input: "{\"text\": \"example input\"}"
+        output: "{\"transformed\": \"dynamic output\"}"
+  - stepNumber: 3
+    description: "Generate the final output in the specified format."
+    action: "Compile and format the transformed data for output."
+    examples:
+      - input: "{\"transformed\": \"dynamic output\"}"
+        output: "Dynamic Output Generated."
+
+## Operational Guidance
+constraints:
+  - "Input data must conform to the specified schema."
+  - "Dynamic attributes must be preloaded for modulation."
+assumptions:
+  - "The system has access to core dynamic attributes and modules."
+validationCriteria:
+  - "Output matches the expected format and structure."
+  - "All dynamic transformations are successfully applied."
+errorHandling:
+  - errorType: "Invalid Input"
+    action: "Log error and abort task execution."
+  - errorType: "Missing Dependencies"
+    action: "Retry loading dependencies or notify system administrator."
+
+## Implementation Notes
+notes:
+  - "Ensure task-specific configurations are aligned with universal principles."
+  - "Use default dynamic attributes for consistent behavior."
+
+## Attachments
+attachments:
+  - name: "Default Task Diagram"
+    type: "image/png"
+    url: "https://example.com/default-task-diagram.png"

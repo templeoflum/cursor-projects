@@ -1,0 +1,13 @@
+dynamic_attributes:
+  alignment: 0.34883720930232553
+name: Universal 6-Step Base
+notes: Base synergy skeleton.
+steps:
+  connectivity: {}
+  emergence: {}
+  flow: {}
+  potential: {}
+  recursion: {}
+  symmetry:
+    desc: Balancing and alignment
+version: '1.0'

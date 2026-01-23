@@ -1,0 +1,9 @@
+# expansions file for step: Potential
+# This is an advanced expansions placeholder for synergy above threshold.
+# Overwrite or merge as needed.
+
+expansion_logic:
+  synergy_override: false
+  offset_range: "-0.1 to 0.1"
+  notes:
+    - "Adjust expansions if synergy measure > 0.6"

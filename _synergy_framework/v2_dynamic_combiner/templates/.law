@@ -1,0 +1,53 @@
+---
+lawsID: # unique identifier for the .law file (e.g., "hermetic-001")
+name: # text - Name of the law set (e.g., "Universal Hermetic Laws")
+dynamic_attributes: # Inheritable dynamic elements
+  polarity:
+    axis: # text - Polarity spectrum (e.g., "Compression-Expansion")
+    default_state: # text - Default position on the axis (e.g., "Balanced")
+    fluctuation_range: # text - Fluctuation range (e.g., "-5 to +5")
+  vibration_level:
+    default_intensity: # text - Default activity level (e.g., "Low", "Medium", "High")
+  rhythm:
+    cycle: # text - Temporal rhythm (e.g., "Daily", "Batch")
+    phase:
+      current: # text - Default starting phase name (e.g., "growth")
+      length: # integer - Number of phases in the cycle
+      phases: # list of text - All possible phases (e.g., ["growth", "peak", "decline", "reset"])
+      degree: # float - Normalized starting degree (0 to 1)
+  energy:
+    masculine: # float - Default masculine energy (0 to 1)
+    feminine: # float - Default feminine energy (0 to 1)
+seed: # float - Default normalized seed value (0 to 1) for inheriting files
+
+## Universal Principles
+principles:
+  - name: # text - Name of the principle (e.g., "Dynamic Balance")
+    description: # text - Explanation of the principle
+    effect: # text - How this principle affects files or attributes
+
+## Update and Enforcement Policies
+update_policies:
+  - frequency: # text - How often the laws are reviewed or updated (e.g., "Monthly", "Event-Driven")
+  - approval_process: # text - Description of how updates are approved (e.g., "Consensus-Based", "Automated Review")
+
+## Related Items
+related_items:
+  - type: # text - Relationship type (e.g., "inspired by", "contradicts")
+    target: # text - Related file or law ID
+    description: # text - Explanation of the relationship
+
+universal_principles: # Universal rules and their system-wide effects
+  - name: # Name of the principle (e.g., "Polarity")
+    description: # Explanation of the principle
+    effect: # System-wide influence of the principle
+  - name: "Vibration"
+    description: "All files vibrate at a unique intensity influenced by the .law file."
+    effect: "Dynamic energy impacts file activity and task execution intensity."
+
+file_variation_rules: # Guidelines for file-level individuality
+  - fileType: # File type these rules apply to (e.g., ".style", ".transform")
+    variations:
+      - principle: # Universal principle being varied (e.g., "Polarity")
+        allowable_range: # Specific range for variation (e.g., "-10 to +10 from baseline")
+        example_effects: # Examples of how this principle fluctuates for this file type

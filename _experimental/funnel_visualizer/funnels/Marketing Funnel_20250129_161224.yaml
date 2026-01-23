@@ -1,0 +1,32 @@
+stages:
+- color: '#FF9999'
+  items:
+  - Social Media
+  - Google Ads
+  - Meta Ads
+  name: Awareness
+- color: '#FFCC99'
+  items:
+  - Lead Magnets
+  - Blog Content
+  - Emails
+  name: Engagement
+- color: '#FFFF99'
+  items:
+  - Retargeting Ads
+  - Testimonials
+  - Webinar
+  name: Consideration
+- color: '#CCFF99'
+  items:
+  - Consultation
+  - Sign-Ups
+  - Offers
+  name: Conversion
+- color: '#99FF99'
+  items:
+  - Community
+  - Check-ins
+  - Referrals
+  name: Retention
+title: Marketing Funnel

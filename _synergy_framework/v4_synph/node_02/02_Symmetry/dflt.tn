@@ -1,0 +1,5 @@
+exponential_tune: { E0: 0.5, E_min: 0.5, k: 0.02 }
+logistic_tune: { c: 4.0, theta0: 0.5 }
+tanh_tune: { c: 3.0, theta0: 0.5 }
+epsilon_clamp: { eps: 0.1 }
+polynomial_tune: { exponent: 3 }

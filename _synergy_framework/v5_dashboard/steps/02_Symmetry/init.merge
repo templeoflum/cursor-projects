@@ -1,0 +1,17 @@
+version: 1.0
+inheritsFrom:
+  - "../../synergy_core/universal_template.reso"
+
+meta:
+  stepName: "Symmetry"
+  synergyMeasure: "E_total"
+
+dynamic_references:
+  expansions: false
+  offset_range: "-0.05 to 0.05"
+
+workflow_instructions:
+  onLoad:
+    - "If synergy < 0.6, remain minimal seed"
+  onComplete:
+    - "If expansions not used, finalize Symmetry"

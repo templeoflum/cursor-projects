@@ -1,0 +1,14 @@
+dynamic_attributes:
+  coherence: 1.0
+name: Universal 6-Step Base
+notes: Base synergy skeleton.
+steps:
+  connectivity: {}
+  emergence: {}
+  flow: {}
+  potential:
+    desc: Initialization impetus
+    energy: 0.36363636363636354
+  recursion: {}
+  symmetry: {}
+version: '1.0'
