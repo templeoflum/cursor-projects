@@ -1,4 +1,4 @@
-Flask==2.2.5
+Flask==3.1.3
 Werkzeug==2.2.5
 # Future dependencies for automated tagging can be added here
 # spaCy==3.4.4
